@@ -88,13 +88,25 @@ const Small = () => {
           </div>
 
           <div className="nav-icon">
-            <img
-              id="pp-sm"
-              className="flex-v"
-              src={`images/pp/${user.pic ? user.pic : "nopic.jpg"}`}
-              alt={user.username}
-              onClick={toggleMenu}
-            />
+            {authCtx.isLoggedIn && (
+              <img
+                id="pp-lg"
+                className="flex-v"
+                src={user.pic ? user.pic : "images/pp/nopic.jpg"}
+                alt={user.username}
+                onClick={toggleMenu}
+              />
+            )}
+
+            {!authCtx.isLoggedIn && (
+              <img
+                id="pp-lg"
+                className="flex-v"
+                src="images/pp/nopic.jpg"
+                alt={user.username}
+                onClick={toggleMenu}
+              />
+            )}
           </div>
         </div>
 

@@ -26,7 +26,7 @@ const Profile = () => {
     <Link id="suggestions-profile" to="/profile">
       <img
         className="nav-icon suggestions-pp"
-        src={`images/pp/${user.pic ? user.pic : "nopic.jpg"}`}
+        src={user.pic ? user.pic : "images/pp/nopic.jpg"}
         alt={user.username}
       />
 

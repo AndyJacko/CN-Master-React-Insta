@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import AuthContext from "../../../../store/authContext";
 
@@ -7,6 +7,7 @@ import "./Info.css";
 
 const Info = () => {
   const authCtx = useContext(AuthContext);
+  const navigate = useNavigate();
   const [user, setUser] = useState([]);
 
   useEffect(() => {
@@ -22,13 +23,17 @@ const Info = () => {
     getUser();
   }, [authCtx.user]);
 
+  const onEditButton = () => {
+    navigate("/editprofile");
+  };
+
   return (
     <>
       <section id="profile-info-sm">
         <div id="profile-image-sm">
           <div>
             <img
-              src={`images/pp/${user.pic ? user.pic : "nopic.jpg"}`}
+              src={user.pic ? user.pic : "images/pp/nopic.jpg"}
               alt={user.username}
             />
           </div>
@@ -41,7 +46,7 @@ const Info = () => {
               </Link>
             </div>
 
-            <button>Edit Profile</button>
+            <button onClick={onEditButton}>Edit Profile</button>
           </div>
         </div>
 
@@ -54,7 +59,7 @@ const Info = () => {
 
           <div>
             {user.link && (
-              <a href={`https://${user.link}`} target="_blank" rel="noreferrer">
+              <a href={user.link} target="_blank" rel="noreferrer">
                 {user.link}
               </a>
             )}
@@ -85,7 +90,7 @@ const Info = () => {
       <section id="profile-info-lg">
         <div id="profile-img-lg">
           <img
-            src={`images/pp/${user.pic ? user.pic : "nopic.jpg"}`}
+            src={user.pic ? user.pic : "images/pp/nopic.jpg"}
             alt={user.username}
           />
         </div>
@@ -93,7 +98,7 @@ const Info = () => {
         <div id="profile-about-lg">
           <div id="profile-settings-lg">
             {user.nickname ? user.nickname : user.username}&nbsp;
-            <button>Edit Profile</button>
+            <button onClick={onEditButton}>Edit Profile</button>
             <Link to="/editprofile">
               <i className="fa-solid fa-gear"></i>
             </Link>
@@ -122,10 +127,7 @@ const Info = () => {
 
             <div>
               {user.link && (
-                <a
-                  href={`https://${user.link}`}
-                  target="_blank"
-                  rel="noreferrer">
+                <a href={user.link} target="_blank" rel="noreferrer">
                   {user.link}
                 </a>
               )}
