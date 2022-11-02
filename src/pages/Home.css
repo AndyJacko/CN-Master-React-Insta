@@ -1,0 +1,13 @@
+#content-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (min-width: 1000px) {
+  #content-container {
+    display: flex;
+    justify-content: center;
+  }
+}

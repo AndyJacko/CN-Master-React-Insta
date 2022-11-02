@@ -1,0 +1,29 @@
+header {
+  border-bottom: 1px solid var(--gray);
+}
+
+#logout {
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--gray);
+}
+
+#theme-sm,
+#theme-lg {
+  cursor: pointer;
+}
+
+.nav-icon,
+#logout {
+  color: var(--black);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-icon:hover,
+.nav-icon:visited {
+  color: var(--black);
+}
+
+.hide {
+  display: none;
+}

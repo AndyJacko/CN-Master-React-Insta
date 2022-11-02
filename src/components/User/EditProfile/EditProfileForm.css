@@ -1,0 +1,15 @@
+#edit-profile {
+  padding: 30px;
+}
+
+@media (min-width: 736px) {
+  #edit-profile {
+    max-width: 895px;
+    margin: auto;
+  }
+
+  #edit-profile-form {
+    width: 350px;
+    margin: auto;
+  }
+}

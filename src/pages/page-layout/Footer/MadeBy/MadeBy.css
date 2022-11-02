@@ -1,0 +1,9 @@
+#footer-copy a,
+#footer-copy a:visited {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+#footer-copy a:hover {
+  text-decoration: underline;
+}

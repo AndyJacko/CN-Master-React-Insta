@@ -1,0 +1,22 @@
+@media (min-width: 1000px) {
+  #who-to-follow {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #who-to-follow p {
+    margin: 10px 0 0 0;
+  }
+
+  #s-f-y {
+    color: var(--medium-gray);
+  }
+
+  #see-all {
+    font-size: 12px;
+  }
+}

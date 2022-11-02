@@ -1,0 +1,93 @@
+#header-container-lg {
+  display: none;
+}
+
+#search {
+  display: none;
+}
+
+#pp-lg {
+  width: 24px;
+  display: flex;
+  align-items: center;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+#nav {
+  max-width: 278px;
+  padding: 0 0 0 24px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#nav div {
+  padding: 0 0 0 24px;
+}
+
+@media (min-width: 691px) {
+  #header-container-lg {
+    max-width: 975px;
+    height: 60px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  #search {
+    width: 268px;
+    display: block;
+    background: var(--searchBG);
+    border-radius: 10px;
+  }
+
+  #search-input {
+    max-width: 268px;
+    height: 36px;
+    padding: 10px 10px 10px 40px;
+    border: 0 solid transparent;
+    border-radius: 10px;
+    background: url(https:delaygram.andyjacko.com/images/mag.png) no-repeat
+      scroll 8px 8px var(--searchBG);
+  }
+
+  #search-input:focus {
+    max-width: 268px;
+    outline: none;
+    padding: 10px;
+    background: var(--searchBG);
+  }
+
+  #search-input::placeholder {
+    color: var(--searchPH);
+  }
+
+  #profile-menu-lg {
+    width: 230px;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    background: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 0 6px var(--gray);
+  }
+
+  #profile-menu-lg i {
+    padding-right: 8px;
+  }
+}
+
+@media (min-width: 1000px) {
+  #header-container-lg {
+    max-width: 975px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}

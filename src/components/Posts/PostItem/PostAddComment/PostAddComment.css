@@ -1,0 +1,37 @@
+.post-comments {
+  padding: 6px 16px 4px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--light-gray);
+}
+
+.comment-container {
+  display: flex;
+  align-items: center;
+}
+
+.smiles {
+  font-size: 24px;
+}
+
+.comment-input {
+  margin: 0 0 0 10px;
+  background: transparent;
+  border: none;
+  color: var(--black);
+}
+
+.comment-input:focus {
+  outline: none;
+}
+
+.comment-input::placeholder {
+  color: var(--medium-gray);
+}
+
+.post-link {
+  color: var(--blue);
+  text-decoration: none;
+  cursor: pointer;
+}

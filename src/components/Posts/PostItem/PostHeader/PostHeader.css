@@ -1,0 +1,25 @@
+.post-header {
+  height: 56px;
+  padding: 0 16px 0 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-header-profile {
+  display: flex;
+  align-items: center;
+}
+
+.post-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.ellipsis {
+  font-size: 24px;
+}

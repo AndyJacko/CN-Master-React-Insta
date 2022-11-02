@@ -1,0 +1,7 @@
+.post {
+  margin: 18px 0 0 0;
+  border-radius: 0.5rem;
+  border: 1px solid var(--light-gray);
+  background: var(--white);
+  overflow: hidden;
+}

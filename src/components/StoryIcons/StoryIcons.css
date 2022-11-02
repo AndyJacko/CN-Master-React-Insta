@@ -1,0 +1,20 @@
+#story-icons {
+  width: 470px;
+  resize: none;
+  height: 120px;
+  margin: 22px 0 0 0;
+  padding: 7px 0 0 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid var(--light-gray);
+  background: var(--white);
+}
+
+#story-icons div {
+  width: 66px;
+  margin: 0 16px 0 0;
+  text-align: center;
+  font-size: 0.75rem;
+}

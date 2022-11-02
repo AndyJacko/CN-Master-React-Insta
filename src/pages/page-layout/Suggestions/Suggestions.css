@@ -1,0 +1,12 @@
+#suggestions {
+  width: 100%;
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  #suggestions {
+    margin: 48px 0 0 0;
+    display: block;
+    max-width: 320px;
+  }
+}

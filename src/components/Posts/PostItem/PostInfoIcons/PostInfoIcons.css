@@ -1,0 +1,12 @@
+.post-info-icons {
+  padding: 0 0 0 0;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.like-n-comment {
+  display: flex;
+  align-items: center;
+}

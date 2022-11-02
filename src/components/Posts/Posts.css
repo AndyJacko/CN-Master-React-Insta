@@ -1,0 +1,18 @@
+#posts {
+  width: 100%;
+  max-width: 470px;
+}
+
+@media (min-width: 691px) {
+  #posts {
+    width: 470px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  #posts {
+    width: 470px;
+    margin: 0 32px 0 0;
+  }
+}

@@ -1,0 +1,35 @@
+#gallery {
+  margin: 10px 0 0 0;
+}
+
+#gallery-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#gallery-row div {
+  width: 33%;
+  cursor: pointer;
+}
+
+#gallery-row div img {
+  width: 100%;
+}
+
+@media (min-width: 736px) {
+  #gallery {
+    margin: 14px 0 0 0;
+  }
+
+  #gallery-row {
+    margin: 0 auto 20px auto;
+    max-width: 935px;
+    justify-content: space-around;
+  }
+
+  #gallery-row div {
+    width: 31%;
+    max-width: 273px;
+  }
+}

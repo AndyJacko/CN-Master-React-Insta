@@ -1,0 +1,23 @@
+@media (min-width: 1000px) {
+  #suggestions-profile {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  #suggestions-profile p {
+    font-size: 14px;
+  }
+
+  #suggestions-profile p span {
+    color: var(--medium-gray);
+    font-size: 14px;
+  }
+
+  .suggestions-pp {
+    width: 56px;
+    height: 56px;
+    margin: 0 19px 5px 0;
+    border-radius: 100%;
+  }
+}

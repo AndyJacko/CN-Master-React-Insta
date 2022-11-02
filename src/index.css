@@ -12,6 +12,13 @@ body {
 
 body {
   font-family: "Outfit", sans-serif;
-  color: #ffffff;
-  background-color: #212529;
+  background-color: var(--bodyBG);
+  color: var(--black);
+  position: relative;
+}
+
+a,
+a:hover,
+a:visited {
+  color: var(--black);
 }
