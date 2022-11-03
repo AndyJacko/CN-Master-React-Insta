@@ -52,7 +52,7 @@ const Small = () => {
           <Link id="logo" className="nav-icon" to="/">
             <img
               id="logo-img-sm"
-              src={`images/${
+              src={`http://delaygram.andyjacko.com/images/${
                 authCtx.theme === "Light" ? "logo.png" : "logo2.png"
               }`}
               alt="Delaygram"
@@ -92,7 +92,11 @@ const Small = () => {
               <img
                 id="pp-lg"
                 className="flex-v"
-                src={user.pic ? user.pic : "images/pp/nopic.jpg"}
+                src={
+                  user.pic
+                    ? user.pic
+                    : "http://delaygram.andyjacko.com/images/pp/nopic.jpg"
+                }
                 alt={user.username}
                 onClick={toggleMenu}
               />
@@ -102,7 +106,7 @@ const Small = () => {
               <img
                 id="pp-lg"
                 className="flex-v"
-                src="images/pp/nopic.jpg"
+                src="http://delaygram.andyjacko.com/images/pp/nopic.jpg"
                 alt={user.username}
                 onClick={toggleMenu}
               />

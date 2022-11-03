@@ -1,35 +1,44 @@
 #gallery {
   margin: 10px 0 0 0;
-}
-
-#gallery-row {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
-#gallery-row div {
+#gallery div {
+  position: relative;
   width: 33%;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-#gallery-row div img {
-  width: 100%;
+#gallery div:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+#gallery div img {
+  position: absolute;
+  height: 100%;
+  cursor: pointer;
 }
 
 @media (min-width: 736px) {
   #gallery {
     margin: 14px 0 0 0;
-  }
-
-  #gallery-row {
     margin: 0 auto 20px auto;
     max-width: 935px;
     justify-content: space-around;
   }
 
-  #gallery-row div {
+  #gallery div {
+    margin: 12px 0px;
     width: 31%;
     max-width: 273px;
+    max-height: 273px;
   }
 }
