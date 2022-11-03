@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import Info from "../components/User/Profile/Info/Info";
 import PST from "../components/User/Profile/PST/PST";
 import Gallery from "../components/User/Profile/Gallery/Gallery";
 
 const Profile = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState([]);
 
   const { id } = useParams();
@@ -19,17 +20,26 @@ const Profile = () => {
       );
 
       const data = await response.json();
-      setUser(data.user[0]);
+
+      if (!data.message) {
+        setUser(data.user[0]);
+      } else {
+        navigate("/notfound");
+      }
     };
 
     getUser();
-  }, [id]);
+  }, [id, navigate]);
 
   return (
     <>
-      <Info user={user} />
-      <PST />
-      <Gallery posts={user.posts} />
+      {user._id && (
+        <>
+          <Info user={user} />
+          <PST />
+          <Gallery posts={user.posts} />
+        </>
+      )}
     </>
   );
 };

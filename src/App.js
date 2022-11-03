@@ -28,6 +28,8 @@ const App = () => {
         {authCtx.theme === "Light" ? <Light /> : <Dark />}
 
         <Routes>
+          <Route path="/notfound" element={<NotFound />} />
+
           {authCtx.isLoggedIn && (
             <>
               <Route path="/" element={<HomePage />} />
@@ -52,7 +54,7 @@ const App = () => {
             </>
           )}
 
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Navigate replace to="/notfound" />} />
         </Routes>
       </Suspense>
     </Layout>
