@@ -16,7 +16,7 @@ const WTFBox = ({ id, image, name }) => {
             <strong className="nav-icon">{name}</strong>
           </Link>
           <img
-            src="images/pp/verified.png"
+            src="https://delaygram.andyjacko.com/images/pp/verified.png"
             alt="Verified"
             className="verified"
           />
