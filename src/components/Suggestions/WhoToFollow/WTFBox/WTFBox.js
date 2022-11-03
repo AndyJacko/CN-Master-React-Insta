@@ -1,19 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./WTFBox.css";
 
-const WTFBox = ({ image, name }) => {
+const WTFBox = ({ id, image, name }) => {
   return (
     <div className="w-t-f-box">
       <div className="w-t-f-user">
-        <img
-          className="nav-icon follow-icon"
-          src={`images/pp/${image}`}
-          alt={name}
-        />
+        <Link to={`/profile/${id}`}>
+          <img className="nav-icon follow-icon" src={image} alt={name} />
+        </Link>
 
         <p>
-          <strong className="nav-icon">{name}</strong>
+          <Link to={`/profile/${id}`}>
+            <strong className="nav-icon">{name}</strong>
+          </Link>
           <img
             src="images/pp/verified.png"
             alt="Verified"

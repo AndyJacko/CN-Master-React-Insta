@@ -21,4 +21,5 @@ a,
 a:hover,
 a:visited {
   color: var(--black);
+  text-decoration: none;
 }

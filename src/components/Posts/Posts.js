@@ -1,63 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import StoryIcons from "../StoryIcons/StoryIcons";
 import PostItem from "./PostItem/PostItem";
+import Spinner from "../UI/Spinner/Spinner";
 
 import "./Posts.css";
 
-const DUMMY_POSTS = [
-  {
-    id: 1,
-    ppimage: "vader-pp.jpg",
-    name: "Darth Vader",
-    nickname: "d4rthv4d3r",
-    postimage: "death-star.jpg",
-    alt: "Crib",
-    likes: 7000000000,
-    comment: "Some idiots trashed my crib",
-    tags: ["#rebelscum", "#battleofendor", "#jedimuppets"],
-    numcomments: 300,
-    timeposted: 3,
-  },
-  {
-    id: 2,
-    ppimage: "cartman-pp.jpg",
-    name: "Ultron",
-    nickname: "c4rtm4n",
-    postimage: "south-park.jpg",
-    alt: "The Crew",
-    likes: 2634,
-    comment: "Group photo of the crew",
-    tags: ["#southparkcrew", "#kickthebaby", "#ohmygodtheykilledkenny"],
-    numcomments: 128,
-    timeposted: 4,
-  },
-  {
-    id: 3,
-    ppimage: "ultron-pp.jpg",
-    name: "Eric Cartman",
-    nickname: "ultron1968",
-    postimage: "avengers.jpg",
-    alt: "Avengers",
-    likes: 9652,
-    comment: "Feeling evil...may kill these fools later...",
-    tags: ["#avengersassemble", "#bunchoffools", "#nomatchforme"],
-    numcomments: 329,
-    timeposted: 5,
-  },
-];
-
 const Posts = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [posts, setPosts] = useState();
+
+  useEffect(() => {
+    const getPosts = async () => {
+      const response = await fetch(
+        `https://api.doubleornothingyoyos.com/readPosts/`,
+        {
+          method: "GET",
+        }
+      );
+      const responseData = await response.json();
+
+      if (!responseData.error) {
+        setIsLoading(false);
+        setPosts(responseData.posts);
+      }
+    };
+
+    getPosts();
+  }, []);
+
   return (
     <>
       <section id="posts">
         <StoryIcons />
 
-        <div id="post-container">
-          {DUMMY_POSTS.map((post) => (
-            <PostItem key={post.id} post={post} />
-          ))}
-        </div>
+        {isLoading && <Spinner />}
+        {!isLoading && (
+          <div id="post-container">
+            {posts.map((post) => (
+              <PostItem key={post._id} post={post} />
+            ))}
+          </div>
+        )}
       </section>
     </>
   );

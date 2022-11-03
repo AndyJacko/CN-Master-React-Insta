@@ -23,7 +23,7 @@ const Profile = () => {
   }, [authCtx.user]);
 
   return (
-    <Link id="suggestions-profile" to="/profile">
+    <Link id="suggestions-profile" to={`/profile/${authCtx.user}`}>
       <img
         className="nav-icon suggestions-pp"
         src={user.pic ? user.pic : "images/pp/nopic.jpg"}

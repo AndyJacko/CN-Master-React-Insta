@@ -117,7 +117,7 @@ const Small = () => {
                 <Link
                   id="p-link"
                   className="nav-icon"
-                  to="/profile"
+                  to={`/profile/${authCtx.user}`}
                   onClick={toggleMenu}>
                   <i className="fa-regular fa-circle-user"></i>Profile
                 </Link>

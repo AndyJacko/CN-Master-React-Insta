@@ -1,27 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import AuthContext from "../../../../store/authContext";
 
 import "./Info.css";
 
-const Info = () => {
+const Info = ({ user }) => {
   const authCtx = useContext(AuthContext);
   const navigate = useNavigate();
-  const [user, setUser] = useState([]);
 
-  useEffect(() => {
-    const getUser = async () => {
-      const response = await fetch(
-        `https://api.doubleornothingyoyos.com/readUser/${authCtx.user}`
-      );
-
-      const data = await response.json();
-      setUser(data.user[0]);
-    };
-
-    getUser();
-  }, [authCtx.user]);
+  useEffect(() => window.scrollTo(0, 0), []);
 
   const onEditButton = () => {
     navigate("/editprofile");
@@ -41,12 +29,16 @@ const Info = () => {
           <div id="profile-settings-sm">
             <div>
               {user.nickname ? user.nickname : user.username}&nbsp;
-              <Link to="/editprofile">
-                <i className="fa-solid fa-gear"></i>
-              </Link>
+              {user._id === authCtx.user && (
+                <Link to="/editprofile">
+                  <i className="fa-solid fa-gear"></i>
+                </Link>
+              )}
             </div>
 
-            <button onClick={onEditButton}>Edit Profile</button>
+            {user._id === authCtx.user && (
+              <button onClick={onEditButton}>Edit Profile</button>
+            )}
           </div>
         </div>
 
@@ -68,19 +60,19 @@ const Info = () => {
 
         <div id="profile-stats-sm">
           <span>
-            <strong>{user.posts}</strong>
+            <strong>{Number(user.numposts).toLocaleString()}</strong>
             <br />
             posts
           </span>
 
           <span>
-            <strong>{user.followers}</strong>
+            <strong>{Number(user.followers).toLocaleString()}</strong>
             <br />
             followers
           </span>
 
           <span>
-            <strong>{user.following}</strong>
+            <strong>{Number(user.following).toLocaleString()}</strong>
             <br />
             following
           </span>
@@ -98,23 +90,30 @@ const Info = () => {
         <div id="profile-about-lg">
           <div id="profile-settings-lg">
             {user.nickname ? user.nickname : user.username}&nbsp;
-            <button onClick={onEditButton}>Edit Profile</button>
-            <Link to="/editprofile">
-              <i className="fa-solid fa-gear"></i>
-            </Link>
+            {user._id === authCtx.user && (
+              <>
+                <button onClick={onEditButton}>Edit Profile</button>
+                <Link to="/editprofile">
+                  <i className="fa-solid fa-gear"></i>
+                </Link>
+              </>
+            )}
           </div>
 
           <div id="profile-stats-lg">
             <span>
-              <strong>{user.posts}</strong> posts
+              <strong>{Number(user.numposts).toLocaleString()}</strong>
+              &nbsp;posts
             </span>
 
             <span>
-              <strong>{user.followers}</strong> followers
+              <strong>{Number(user.followers).toLocaleString()}</strong>
+              &nbsp;followers
             </span>
 
             <span>
-              <strong>{user.following}</strong> following
+              <strong>{Number(user.following).toLocaleString()}</strong>
+              &nbsp;following
             </span>
           </div>
 

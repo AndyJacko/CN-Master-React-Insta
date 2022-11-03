@@ -70,7 +70,7 @@ const EditProfile = () => {
       bioLinkIR.current.value = "";
       picIR.current.value = "";
       setMessage("");
-      navigate("/profile");
+      navigate(`/profile/${authCtx.user}`);
     }, 3000);
   };
 

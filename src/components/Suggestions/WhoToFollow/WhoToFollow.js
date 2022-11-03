@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import WTFBox from "./WTFBox/WTFBox";
+import Spinner from "../../UI/Spinner/Spinner";
 
 import "./WhoToFollow.css";
 
 const WhoToFollow = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const getPosts = async () => {
+      const response = await fetch(
+        `https://api.doubleornothingyoyos.com/readUsers/5`,
+        {
+          method: "GET",
+        }
+      );
+      const responseData = await response.json();
+
+      if (!responseData.error) {
+        setIsLoading(false);
+        setUsers(responseData.users);
+      }
+    };
+
+    getPosts();
+  }, []);
+
   return (
     <>
       <div id="who-to-follow">
@@ -14,13 +37,20 @@ const WhoToFollow = () => {
         </p>
       </div>
 
-      <div id="w-t-f-container">
-        <WTFBox image="skeletor-pp.jpg" name="skeletor" />
-        <WTFBox image="cow-pp.jpg" name="cowcowcow" />
-        <WTFBox image="chicken-pp.jpg" name="chicken_1" />
-        <WTFBox image="joker-pp.jpg" name="jok3r" />
-        <WTFBox image="jason-pp.jpg" name="jason_v" />
-      </div>
+      {isLoading && <Spinner />}
+
+      {!isLoading && (
+        <div id="w-t-f-container">
+          {users.map((user) => (
+            <WTFBox
+              key={user._id}
+              id={user._id}
+              image={user.pic}
+              name={user.nickname}
+            />
+          ))}
+        </div>
+      )}
     </>
   );
 };

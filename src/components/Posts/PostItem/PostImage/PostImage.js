@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./PostImage.css";
 
-const PostImage = ({ postimage, alt }) => {
+const PostImage = ({ id, postimage, alt }) => {
   return (
-    <div className="post-image">
-      <img src={`images/posts/${postimage}`} alt={alt} />
-    </div>
+    <Link to={`/profile/${id}`} className="post-image">
+      <img src={postimage} alt={alt} />
+    </Link>
   );
 };
 

@@ -11,16 +11,18 @@ const PostItem = ({ post }) => {
   return (
     <div className="post">
       <PostHeader
-        ppimage={post.ppimage}
-        name={post.name}
-        nickname={post.nickname}
+        id={post.user._id}
+        ppimage={post.user.pic}
+        name={post.user.name}
+        nickname={post.user.nickname}
       />
 
-      <PostImage postimage={post.postimage} alt={post.alt} />
+      <PostImage id={post.user._id} postimage={post.postimage} alt={post.alt} />
 
       <PostInfo
+        id={post.user._id}
         likes={post.likes}
-        nickname={post.nickname}
+        nickname={post.user.nickname}
         comment={post.comment}
         tags={post.tags}
         numcomments={post.numcomments}

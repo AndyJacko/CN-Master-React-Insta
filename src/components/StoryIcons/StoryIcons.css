@@ -12,7 +12,7 @@
   background: var(--white);
 }
 
-#story-icons div {
+#story-icons a {
   width: 66px;
   margin: 0 16px 0 0;
   text-align: center;

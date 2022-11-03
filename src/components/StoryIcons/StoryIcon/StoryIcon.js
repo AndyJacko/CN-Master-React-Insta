@@ -1,17 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./StoryIcon.css";
 
-const StoryIcon = ({ image, name }) => {
+const StoryIcon = ({ id, image, name }) => {
   return (
-    <div>
-      <img
-        className="nav-icon story-icon"
-        src={`images/pp/${image}`}
-        alt={name}
-      />
-      <span className="nav-icon">{name}</span>
-    </div>
+    <Link to={`/profile/${id}`} className="story-icon-container">
+      <img className="story-icon" src={image} alt={name} />
+      <span className="story-icon-user">{name}</span>
+    </Link>
   );
 };
 

@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import PostInfoIcons from "../PostInfoIcons/PostInfoIcons";
 
 import "./PostInfo.css";
 
 const PostInfo = ({
+  id,
   likes,
   nickname,
   comment,
@@ -21,11 +23,14 @@ const PostInfo = ({
       </p>
 
       <p className="post-comment">
-        <strong className="nav-icon">{nickname}</strong> {comment}
+        <Link to={`/profile/${id}`}>
+          <strong className="nav-icon">{nickname}</strong>
+        </Link>{" "}
+        {comment}
         <br />
-        {tags.map((tag) => (
+        {tags.split(", ").map((tag) => (
           <span key={tag} className="hashtag">
-            {tag}
+            #{tag}
           </span>
         ))}
       </p>
