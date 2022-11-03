@@ -1,0 +1,15 @@
+#add-post {
+  padding: 30px;
+}
+
+@media (min-width: 736px) {
+  #add-post {
+    max-width: 895px;
+    margin: auto;
+  }
+
+  #add-post-form {
+    width: 350px;
+    margin: auto;
+  }
+}
