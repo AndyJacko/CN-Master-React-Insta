@@ -75,9 +75,9 @@ const Small = () => {
             <i className="fa-solid fa-magnifying-glass"></i>
           </div>
 
-          <div className="nav-icon">
+          <Link className="nav-icon" to="/addpost">
             <i className="fa-regular fa-square-plus"></i>
-          </div>
+          </Link>
 
           <div className="nav-icon">
             <i className="fa-regular fa-compass"></i>

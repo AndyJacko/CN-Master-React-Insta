@@ -10,6 +10,7 @@ import Spinner from "./components/UI/Spinner/Spinner";
 const UserAuthPage = React.lazy(() => import("./pages/UserAuth"));
 const ProfilePage = React.lazy(() => import("./pages/Profile"));
 const EditProfilePage = React.lazy(() => import("./pages/EditProfile"));
+const AddPostPage = React.lazy(() => import("./pages/AddPost"));
 
 const Dark = React.lazy(() => import("./pages/page-layout/Theme/Dark/Dark"));
 const Light = React.lazy(() => import("./pages/page-layout/Theme/Light/Light"));
@@ -33,6 +34,7 @@ const App = () => {
           {authCtx.isLoggedIn && (
             <>
               <Route path="/" element={<HomePage />} />
+              <Route path="/addpost" element={<AddPostPage />} />
               <Route path="/profile/:id" element={<ProfilePage />} />
               <Route path="/editprofile" element={<EditProfilePage />} />
               <Route path="/login" element={<Navigate replace to="/" />} />
@@ -42,6 +44,10 @@ const App = () => {
           {!authCtx.isLoggedIn && (
             <>
               <Route path="/" element={<Navigate replace to="/login" />} />
+              <Route
+                path="/addpost"
+                element={<Navigate replace to="/login" />}
+              />
               <Route
                 path="/profile/:id"
                 element={<Navigate replace to="/login" />}

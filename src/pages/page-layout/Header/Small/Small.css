@@ -14,6 +14,7 @@
   right: 0;
   background-color: var(--white);
   border-top: 1px solid var(--gray);
+  z-index: 10;
 }
 
 #header-container-top-sm {

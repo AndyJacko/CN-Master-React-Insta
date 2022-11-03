@@ -15,6 +15,7 @@ body {
   background-color: var(--bodyBG);
   color: var(--black);
   position: relative;
+  overflow-y: scroll;
 }
 
 a,
