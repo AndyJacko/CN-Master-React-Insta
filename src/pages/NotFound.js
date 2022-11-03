@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 
+import NotFound from "../components/NotFound/NotFound";
+
 const NotFoundPage = () => {
   useEffect(() => window.scrollTo(0, 0), []);
 
-  return (
-    <div className="p-5 center">
-      <h2>404 - Page Not Found</h2>
-    </div>
-  );
+  return <NotFound />;
 };
 
 export default NotFoundPage;

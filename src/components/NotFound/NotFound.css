@@ -1,0 +1,11 @@
+#not-found {
+  padding: 30px;
+  text-align: center;
+}
+
+@media (min-width: 736px) {
+  #not-found {
+    max-width: 895px;
+    margin: auto;
+  }
+}
