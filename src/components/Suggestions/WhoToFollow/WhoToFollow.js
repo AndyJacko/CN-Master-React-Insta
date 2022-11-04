@@ -12,7 +12,7 @@ const WhoToFollow = () => {
   useEffect(() => {
     const getPosts = async () => {
       const response = await fetch(
-        `https://api.doubleornothingyoyos.com/readUsers/5`,
+        `${process.env.REACT_APP_API_URI}/readUsers/5`,
         {
           method: "GET",
         }

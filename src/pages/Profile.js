@@ -16,7 +16,7 @@ const Profile = () => {
   useEffect(() => {
     const getUser = async () => {
       const response = await fetch(
-        `https://api.doubleornothingyoyos.com/readUser/${id}`
+        `${process.env.REACT_APP_API_URI}/readUser/${id}`
       );
 
       const data = await response.json();

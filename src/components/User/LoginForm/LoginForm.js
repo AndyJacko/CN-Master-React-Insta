@@ -31,16 +31,13 @@ const LoginForm = () => {
       return;
     }
 
-    const response = await fetch(
-      "https://api.doubleornothingyoyos.com/login/",
-      {
-        method: "POST",
-        body: JSON.stringify({ username: user, password: pass }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(`${process.env.REACT_APP_API_URI}/login/`, {
+      method: "POST",
+      body: JSON.stringify({ username: user, password: pass }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const responseData = await response.json();
 
     if (responseData.token) {

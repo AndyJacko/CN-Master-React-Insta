@@ -13,7 +13,7 @@ const Posts = () => {
   useEffect(() => {
     const getPosts = async () => {
       const response = await fetch(
-        `https://api.doubleornothingyoyos.com/readPosts/`,
+        `${process.env.REACT_APP_API_URI}/readPosts/`,
         {
           method: "GET",
         }

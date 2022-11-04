@@ -32,7 +32,7 @@ const RegisterForm = () => {
     }
 
     const response = await fetch(
-      "https://api.doubleornothingyoyos.com/createUser/",
+      `${process.env.REACT_APP_API_URI}/createUser/`,
       {
         method: "POST",
         body: JSON.stringify({ username: name, email, password: pass }),

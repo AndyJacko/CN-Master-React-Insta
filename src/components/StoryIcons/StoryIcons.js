@@ -12,7 +12,7 @@ const StoryIcons = () => {
   useEffect(() => {
     const getPosts = async () => {
       const response = await fetch(
-        `https://api.doubleornothingyoyos.com/readUsers/6`,
+        `${process.env.REACT_APP_API_URI}/readUsers/6`,
         {
           method: "GET",
         }

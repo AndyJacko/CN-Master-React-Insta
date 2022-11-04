@@ -41,7 +41,7 @@ const AddPostsForm = () => {
     }
 
     const response = await fetch(
-      "https://api.doubleornothingyoyos.com/createPost/",
+      `${process.env.REACT_APP_API_URI}/createPost/`,
       {
         method: "POST",
         body: JSON.stringify({

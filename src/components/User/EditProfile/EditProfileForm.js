@@ -22,7 +22,7 @@ const EditProfile = () => {
   useEffect(() => {
     const getUser = async () => {
       const response = await fetch(
-        `https://api.doubleornothingyoyos.com/readUser/${authCtx.user}`
+        `${process.env.REACT_APP_API_URI}/readUser/${authCtx.user}`
       );
 
       const data = await response.json();
@@ -41,7 +41,7 @@ const EditProfile = () => {
     const pic = picIR.current.value;
 
     const response = await fetch(
-      "https://api.doubleornothingyoyos.com/updateUser/",
+      `${process.env.REACT_APP_API_URI}/updateUser/`,
       {
         method: "PUT",
         body: JSON.stringify({
@@ -77,7 +77,7 @@ const EditProfile = () => {
   const onDeleteHandler = async () => {
     if (window.confirm("Really delete your profile?")) {
       const response = await fetch(
-        `https://api.doubleornothingyoyos.com/deleteUser/${authCtx.user}`,
+        `${process.env.REACT_APP_API_URI}/deleteUser/${authCtx.user}`,
         {
           method: "DELETE",
           headers: {

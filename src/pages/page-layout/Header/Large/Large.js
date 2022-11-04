@@ -14,7 +14,7 @@ const Large = () => {
   useEffect(() => {
     const getUser = async () => {
       const response = await fetch(
-        `https://api.doubleornothingyoyos.com/readUser/${authCtx.user}`
+        `${process.env.REACT_APP_API_URI}/readUser/${authCtx.user}`
       );
 
       const data = await response.json();
